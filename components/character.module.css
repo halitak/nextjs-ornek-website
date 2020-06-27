@@ -1,0 +1,40 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333;
+  color: aliceblue;
+  border-radius: 1em;
+  overflow: hidden;
+  position: relative;
+}
+.header figure {
+  margin: 0;
+  text-align: center;
+}
+.header img {
+  width: 100%;
+  height: auto;
+  object-position: center center;
+  object-fit: cover;
+}
+.body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-weight: bold;
+  font-size: var(--font-s-3);
+}
+.body h2{
+  font-size: var(--font-s-2);
+}
+.body a:hover{
+  color: tomato;
+}
+.body small{
+  color: #888;
+  margin-right: .5em;
+  font-size: var(--font-s-4);
+}

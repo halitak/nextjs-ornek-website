@@ -2,19 +2,18 @@ import Layout from '../../components/layout'
 import Head from 'next/head'
 import unfetch from 'isomorphic-unfetch'
 import slug from 'slug'
+import Character from '../../components/character'
 
 function CharacterDetail({ character }) {
+  console.log(character)
   return (
     <Layout>
       <Head>
-        <title>Ana sayfa</title>
+        <title>{character.name}</title>
       </Head>
-
-      <h1>{character.name}</h1>
-
-      <figure>
-        <img src={character.image} alt={character.name} />
-      </figure>
+      <div className="container single">
+        <Character character={character} />
+      </div>
     </Layout>
   )
 }

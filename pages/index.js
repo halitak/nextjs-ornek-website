@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import unfetch from 'isomorphic-unfetch'
 import slug from 'slug'
+import Character from '../components/character'
 
 function HomePage({ characters }) {
   return (
@@ -11,21 +12,18 @@ function HomePage({ characters }) {
         <title>Ana sayfa</title>
       </Head>
       <h1 className="title">THE RICK AND MORTY</h1>
-
-      <ul>
+      <div className="container">
         {characters.results.map(character => (
-          <li key={character.id}>
+          <Character key={character.id} character={character}>
             <Link
               href="/character/[slug]"
               as={`/character/${slug(character.name)}-${character.id}`}
             >
               <a>{character.name}</a>
             </Link>
-          </li>
+          </Character>
         ))}
-      </ul>
-
-      <style jsx>{``}</style>
+      </div>
     </Layout>
   )
 }
